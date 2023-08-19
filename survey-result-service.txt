@@ -1,0 +1,55 @@
+tuanat/survey-result-service:latest
+config server: http://localhost:8888
+db posgres:
+	survey_stat
+	postgres/postgres
+db mongodb:
+	root/example
+
+Luu ket qua survey: post /api/v1/surveyres/
+input
+{
+  "transId": "string",
+  "cif": "string",
+  "channel": "string",
+  "answers": [
+    {
+      "questionId": 0,
+      "question": "string",
+      "answerId": 0,
+      "answer": "string"
+    }
+  ]
+}
+
+count theo cif: get /api/v1/surveyres/countbycif/{cif}
+return :
+{
+  "TotalSentOTTByCif": "2",
+  "TotalSentOTT": "4",
+  "TotalAnswerByCif": "0"
+}
+
+OTT stat
+create: post /api/v1/ottsendres/
+input
+{
+  "transId": "trans6",
+  "cif": "cif1",
+  "mobile": "string",
+  "channel": "string",
+  "branchId": "string",
+  "branchName": "string",
+  "branchAddress": "string",
+  "transType": "string",
+  "transName": "string",
+  "status": int,
+  "msgContent": "string"
+}
+
+update: put /api/v1/ottsendres/{id}
+input
+{
+  "transId": "string",
+  "stat": int
+}
