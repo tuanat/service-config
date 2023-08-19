@@ -3,11 +3,11 @@ spring:
     name: template-service
   data:
     mongodb:
-      uri: mongodb://root:example@localhost:27017/surveyanswers?authSource=admin
+      uri: mongodb://root:example@my-release-mongodb:27017/surveyanswers?authSource=admin
       database: surveyanswers
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/survey_stat
+    url: jdbc:postgresql://my-release2-postgresql:5432/survey_stat
     username: postgres
     password: postgres
   jpa:
